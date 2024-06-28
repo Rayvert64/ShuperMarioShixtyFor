@@ -110,7 +110,7 @@ local function character_add_caps(modelInfo, caps)
 end
 
 ---@param modelInfo ModelExtendedId|integer
----@param starModel ModelExtendedId|integer 
+---@param starModel ModelExtendedId|integer
 ---@param starIcon TextureInfo|nil Use get_texture_info()
 local function character_add_celebration_star(modelInfo, starModel, starIcon)
     characterCelebrationStar[modelInfo] = starModel
@@ -167,6 +167,10 @@ local function is_options_open()
     return options
 end
 
+local function get_menu_color()
+    return menuColorTable[optionTableRef.menuColor]
+end
+
 local controller = {
     buttonDown = 0,
     buttonPressed = 0,
@@ -202,6 +206,7 @@ _G.charSelect = {
     is_menu_open = is_menu_open,
     is_options_open = is_options_open,
     get_status = get_status,
+    get_menu_color = get_menu_color,
     optionTableRef = optionTableRef,
     controller = controller,
     hook_allow_menu_open = hook_allow_menu_open,

@@ -4,6 +4,8 @@
 
 #include "audio_api.h"
 
+#include <stdio.h>
+
 static SDL_AudioDeviceID dev;
 
 static bool audio_sdl_init(void) {
@@ -43,7 +45,7 @@ static void audio_sdl_play(const uint8_t *buf, size_t len) {
     }
 }
 
-static void audio_sdl_shutdown(void) 
+static void audio_sdl_shutdown(void)
 {
     if (SDL_WasInit(SDL_INIT_AUDIO)) {
         if (dev != 0) {

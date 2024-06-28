@@ -140,11 +140,7 @@ optionTable = {
     },
 }
 
-local optionTableCount = #optionTable
-
-local latencyValueTable = {12, 6, 3}
-
-local menuColorTable = {
+menuColorTable = {
     { r = 255, g = 50,  b = 50  },
     { r = 255, g = 100, b = 50  },
     { r = 255, g = 255, b = 50  },
@@ -155,6 +151,10 @@ local menuColorTable = {
     { r = 255, g = 255, b = 255 },
     { r = 50,  g = 50,  b = 50  }
 }
+
+local optionTableCount = #optionTable
+
+local latencyValueTable = {12, 6, 3}
 
 -- Default Player Adjustments
 local defaultNames = {
@@ -799,7 +799,7 @@ local function on_hud_render()
                 djui_hud_render_rect(widthHalf - 4 * widthScaleLimited, yOffset + 10 - 2 * widthScaleLimited, 8 * widthScaleLimited, 5 * widthScaleLimited)
             end
 
-            -- Options 
+            -- Options
             for i = currOption - 2, currOption + 2 do
                 if not (i < 1 or i > optionTableCount) then
                     local toggleName = optionTable[i].name
